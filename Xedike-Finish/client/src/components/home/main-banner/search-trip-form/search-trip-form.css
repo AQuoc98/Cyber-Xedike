@@ -1,0 +1,17 @@
+.search-trip-form .btn-xedike{
+    height: 50px;
+    width: 100%;
+    border-radius: 0;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+@media screen and (max-width: 768px){
+    .search-trip-form .btn-xedike{
+        border-radius: .25rem;
+    }
+}
+
+
+
+

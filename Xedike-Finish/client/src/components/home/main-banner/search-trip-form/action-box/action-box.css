@@ -1,0 +1,69 @@
+/* TODO: selector */
+.search-trip-form .ant-select-lg .ant-select-selection--single{
+    height: 50px;
+}
+
+.search-trip-form .ant-select-lg .ant-select-selection__rendered {
+    line-height: 50px;
+}
+
+.search-trip-form .ant-select-selection__placeholder, .ant-select-search__field__placeholder{
+    text-align: center;
+}
+
+.search-trip-form .ant-select-selection{
+    border-radius: 0;    
+}
+
+.search-trip-form .rounded-left .ant-select-selection{
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+
+/* TODO: calender picker */
+.search-trip-form .ant-calendar-picker{
+    width: 100%;
+}
+
+.search-trip-form .ant-input-lg{
+    height: 50px;
+}
+
+.search-trip-form .ant-input{
+    border-radius: 0;
+}
+
+
+/* TODO: input number */
+.search-trip-form .ant-input-number-lg{
+    height: 50px;
+    width: 100%;
+    border-radius: 0;
+}
+
+.search-trip-form .ant-input-number-lg input {
+    height: 50px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px){
+    .search-trip-form .action-item{
+        margin: 1rem 0;
+    }
+
+    .search-trip-form .ant-select-selection{
+        border-radius: 3px;
+    }
+
+    .search-trip-form .ant-input-number-lg{
+        border-top-right-radius: .25rem;
+        border-bottom-right-radius: .25rem;
+    }
+
+    .search-trip-form .ant-input{
+        border-top-left-radius: .25rem;
+        border-bottom-left-radius: .25rem;
+    }
+}
+

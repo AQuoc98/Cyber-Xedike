@@ -1,0 +1,35 @@
+.navbar-xedike {
+    background: var(--deep-white);
+    color: var(--white);
+    border-bottom: solid 1px #80808030;
+  }
+  
+  .navbar-xedike .navbar-brand img {
+    width: 170px;
+    height: 120px;
+  }
+  
+  .navbar-xedike .navbar-btn-group {
+    display: flex;
+  }
+  
+  .navbar-xedike .navbar-btn-group .nav-link {
+    color: var(--black);
+    transition: all 0.3s;
+    font-size: 1rem;
+  }
+  
+  .navbar-xedike .navbar-btn-group .nav-link:hover {
+    color: var(--light-blue);
+  }
+  
+  @media screen and (max-width: 640px) {
+    .navbar-xedike .navbar-brand img {
+      width: 120px;
+      margin-bottom: 2rem;
+    }
+    .navbar-xedike {
+      justify-content: center;
+    }
+  }
+  

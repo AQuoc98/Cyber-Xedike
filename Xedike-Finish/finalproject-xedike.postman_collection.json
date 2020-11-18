@@ -1,0 +1,964 @@
+{
+	"info": {
+		"_postman_id": "2adb454c-9f0d-4ae2-bc62-8b486f39e302",
+		"name": "finalproject-xedike",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get list of users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/getUsersList",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"getUsersList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bd443bbf-170b-41b7-8c75-2f68b57f90f4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"email\": \"anhquoc2@gmail.com\",\r\n        \"password\": \"123456789\",\r\n        \"password2\": \"123456789\",\r\n    \t\"fullName\": \"nguyen van b\",\r\n        \"userType\": \"driver\",\r\n        \"phone\": \"0123456788\",\r\n        \"DOB\": \"03-03-1998\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/register",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"anhquoc2@gmail.com\",\n\t\"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/login",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload avatar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/KEN/Desktop/sad.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/uploadAvatar",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"uploadAvatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/5da81a9d01eb642becbd814b",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"5da81a9d01eb642becbd814b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": " bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \r\n    \t\"fullName\": \"nguyen van a\",\r\n        \"DOB\": \"03-03-1998\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/updateAccount",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"updateAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": " Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/deleteAccount",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"deleteAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rate driver",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"rating\" : 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/rateDriver/5daa5d88f423b52bfc89fddc",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"rateDriver",
+								"5daa5d88f423b52bfc89fddc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change pw",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"oldPassword\" : \"123456788\",\n\t\"newPassword\" : \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/changePassword",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"changePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE all user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/deleteAllUser",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"deleteAllUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all driver",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/deleteAllUser",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"deleteAllUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test private",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/testPassport",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"testPassport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user's history trip",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/getUserTrip/5daa620f9fcd3f0fb012a917",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"getUserTrip",
+								"5daa620f9fcd3f0fb012a917"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Drivers",
+			"item": [
+				{
+					"name": "Create Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"address\": \"Nha Trang\",\r\n        \"passportId\": \"123456\",\r\n        \"job\" : \"Student\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/driver/createProfile",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"driver",
+								"createProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get info of driver",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/driver/",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"driver",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\r\n        \"address\": \"Da Nang\",\r\n        \"passportId\": \"123456\",\r\n        \"job\" : \"student\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/driver/adjustDriverProfile",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"driver",
+								"adjustDriverProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete profile",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/driver/deleteProfile",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"driver",
+								"deleteProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add car image",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "carImage",
+									"type": "file",
+									"src": "/C:/Users/KEN/Desktop/car.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/driver/addCarImage/5da8227f476982510c3109ee",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"driver",
+								"addCarImage",
+								"5da8227f476982510c3109ee"
+							],
+							"query": [
+								{
+									"key": "carIma",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update car",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\t\"brand\": \"honda\",\n            \"model\": \"honda\",\n            \"manufacturingYear\": \"2000\",\n            \"licensePlate\": \"1232\",\n            \"numberOfSeats\": \"4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/driver/updateCar/5da8227f476982510c3109ee",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"driver",
+								"updateCar",
+								"5da8227f476982510c3109ee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete car",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/driver/deleteCar/5da8227f476982510c3109ee",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"driver",
+								"deleteCar",
+								"5da8227f476982510c3109ee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add car",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"brand\": \"Toyota\",\n        \"model\": \"Toyota\",\n        \"manufacturingYear\" : \"1998\",\n        \"licensePlate\" : \"123456\",\n        \"numberOfSeats\" : \"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/driver/addCar",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"driver",
+								"addCar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get driver's trips created",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "beare {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/user/driver/getDriverTrip",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"driver",
+								"getDriverTrip"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Trips",
+			"item": [
+				{
+					"name": "Get trips",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/trip/getAllTrip",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"trip",
+								"getAllTrip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a trip",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"locationFrom\" : \"Nha Trang\",\n\t\"locationTo\" : \"Qui Nhơn\",\n\t\"startTime\" : \"Thu Oct 10 2019 00:06:09 GMT+0700\",\n\t\"availableSeats\" : \"7\",\n\t\"fee\" : \"50000\",\n\t\"isFinished\" : false\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/trip/createTrip",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"trip",
+								"createTrip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update trip",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"locationFrom\" : \"Nha trang\",\n\t\"locationTo\" : \"Qui Nhơn\",\n\t\"startTime\" : \"Thu Oct 10 2019 00:06:09 GMT+0700\",\n\t\"availableSeats\" : \"1\",\n\t\"fee\" : \"120000\",\n\t\"isFinished\" : false\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/trip/updateTrip/5da8269ad8eb4220d097c9e8",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"trip",
+								"updateTrip",
+								"5da8269ad8eb4220d097c9e8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete trip",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/trip/deleteTrip/5da8269ad8eb4220d097c9e8",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"trip",
+								"deleteTrip",
+								"5da8269ad8eb4220d097c9e8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book trip",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/trip/bookTrip/5da8288ae9de122a0061befb",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"trip",
+								"bookTrip",
+								"5da8288ae9de122a0061befb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel trip",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/trip/cancelTrip/5da8288ae9de122a0061befb",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"trip",
+								"cancelTrip",
+								"5da8288ae9de122a0061befb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Finish trip",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LOCAL_HOST}}/api/trip/finishTrip/5da8269ad8eb4220d097c9e8",
+							"host": [
+								"{{LOCAL_HOST}}"
+							],
+							"path": [
+								"api",
+								"trip",
+								"finishTrip",
+								"5da8269ad8eb4220d097c9e8"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	]
+}

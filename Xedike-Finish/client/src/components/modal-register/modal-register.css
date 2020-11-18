@@ -1,0 +1,91 @@
+.modal-content .close{
+    color: var(--gray);
+    font-size: 1.2rem;
+}
+
+.modal-content label{
+    color: var(--gray);
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.modal-content .inline-wrapper{
+    color: var(--black);
+    font-weight: 600;
+    display: inline-block;
+    width: 50%;    
+}
+
+.modal-content .inline-wrapper label{
+    color: var(--black);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 27%;
+    padding-right: 27%;
+    transition: all .4s;
+    border-radius: 5px;
+}
+
+.modal-content .inline-wrapper label img{
+    height: 120%;
+    width: 120%;
+}
+
+.modal-content .inline-wrapper label:hover{
+    border-color: var(--light-blue);
+}
+
+#passenger:checked ~ #labelPassenger{
+    background: red;
+}
+
+#driver:checked ~ #labelDriver{
+    background: red;
+}
+
+.modal-content .inline-wrapper label img{
+    width: 100%;
+}
+
+.modal-content p{
+    font-size: .9rem;
+}
+
+.modal-content a{
+    color: var(--blue);
+    transition: color .3s;
+}
+
+.modal-content a:hover{
+    color: var(--light-blue);
+}
+
+.modal-content .inline-group{
+    display: inline-block;
+    width: 50%;
+}
+
+.modal-content .form-control{
+    height: 45px!important;
+    border-radius: 5px;
+}
+
+.modal-content .form-control:focus{
+    box-shadow: none;
+}
+
+#passenger:checked ~ .inline-wrapper #labelPassenger{
+    border-color: var(--light-blue);
+}
+
+
+#driver:checked ~ .inline-wrapper #labelDriver{
+    border-color: var(--light-blue);
+}
+
+
+
+
+

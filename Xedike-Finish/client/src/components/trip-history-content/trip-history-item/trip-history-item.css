@@ -1,0 +1,30 @@
+.trip-history-item{
+    margin: 2rem 0;
+}
+
+.trip-history-item .fa{
+    margin-right: 6px;
+    color: var(--gray);
+}
+
+.trip-history-item .fa.fa-star{
+    color: var(--yellow);
+}
+
+.trip-history-item .driver{
+    display: flex;
+}
+
+.trip-history-item .driver .avatar{
+    width: 45px;
+    height: 45px;
+    border: 0;
+}
+
+@media screen and (max-width: 768px){
+    .trip-history-item .driver .avatar{
+        width: 40px;
+        height: 40px;
+        margin-top: .5rem;
+    }
+}

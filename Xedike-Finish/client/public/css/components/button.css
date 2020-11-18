@@ -1,0 +1,50 @@
+.btn-xedike{
+    background: var(--blue);
+    border-radius: 3px;
+    border:0;
+    color: var(--white);
+    cursor: pointer;
+    transition: all .3s;
+    padding: 10px 15px;    
+    font-family: "Roboto";
+}
+
+.btn-xedike:hover{
+    background: var(--light-blue);
+}
+
+.btn-action{
+    background: var(--orange);
+    color: var(--white);
+    cursor: pointer;
+    transition: all .3s;
+    padding: 10px 15px;    
+    font-family: "Roboto";
+    border-radius: 3px;
+    border: 0;
+    transition: all .3s;
+}
+
+.btn-action:hover{
+    color: var(--white)!important;
+    background: var(--deep-orange);
+}
+
+.btn-watch-more{
+    background: #fff;
+    padding: 15px 60px;
+    cursor: pointer;
+    box-shadow: 0 0 1px 3px rgba(0,0,0,.1);
+    border: 0;
+    font-size: 1rem;
+    text-transform: capitalize;
+    transition: all .5s;
+    color: var(--gray);
+    border: 2px solid var(--gray);
+    border-radius: 5px;
+}
+
+.btn-watch-more:hover{
+    border-color: var(--black);
+    color: var(--black);
+}
